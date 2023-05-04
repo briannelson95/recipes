@@ -3,6 +3,8 @@ import {deskTool} from 'sanity/desk';
 import {visionTool} from '@sanity/vision';
 
 import { schemaTypes } from "./schemas";
+import { myTheme } from "./sanityTheme";
+import StudioNavbar from "./components/StudioNavbar";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
@@ -10,7 +12,7 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 export default defineConfig({
     basePath: '/admin',
     name: 'default',
-    title: 'recipes',
+    title: 'Recipes',
 
     projectId,
     dataset,
@@ -22,5 +24,13 @@ export default defineConfig({
 
     schema: {
         types: schemaTypes
-    }
+    },
+
+    studio: {
+        components: {
+            navbar: StudioNavbar
+        }
+    },
+    
+    // theme: myTheme,
 })

@@ -1,3 +1,4 @@
+import { category } from "./documents/category";
 import { chef } from "./documents/chef";
 import { ingredient } from "./documents/ingredientList";
 import { mediaLibrary } from "./documents/mediaLibrary";
@@ -13,6 +14,7 @@ export const schemaTypes = [
     ingredient,
     recipes,
     chef,
+    category,
     // objects
     blockContent,
     mainImage,

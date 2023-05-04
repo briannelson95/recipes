@@ -100,6 +100,12 @@ export const recipes = defineType({
             name: 'instructions',
             title: 'Instructions',
             type: 'blockContent'
+        }),
+        defineField({
+            name: 'categories',
+            title: 'Categories',
+            type: 'reference',
+            to: {type: 'category'}
         })
     ],
 })
