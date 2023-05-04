@@ -35,6 +35,35 @@ export const recipes = defineType({
             },
         }),
         defineField({
+            name: 'serving',
+            type: 'object',
+            fields: [
+                defineField({
+                    name: 'number',
+                    title: 'Number',
+                    type: 'number',
+                }),
+                defineField({
+                    name: 'unit',
+                    type: 'string',
+                })
+            ],
+            preview: {
+                select: {
+                    number: 'serving.number',
+                    unit: 'serving.unit',
+                },
+                prepare({
+                    number,
+                    unit,
+                }) {
+                    return {
+                        title: `${number} ${unit}`,
+                    }
+                }
+            }
+        }),
+        defineField({
             name: 'ingredientList',
             title: 'Ingredient List',
             type: 'array',
