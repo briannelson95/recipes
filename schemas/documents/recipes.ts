@@ -104,8 +104,13 @@ export const recipes = defineType({
         defineField({
             name: 'categories',
             title: 'Categories',
-            type: 'reference',
-            to: {type: 'category'}
+            type: 'array',
+            of: [
+                {
+                    type: 'reference',
+                    to: {type: 'category'}
+                }
+            ]
         })
     ],
 })
