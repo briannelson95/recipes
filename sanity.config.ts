@@ -5,6 +5,7 @@ import {visionTool} from '@sanity/vision';
 import { schemaTypes } from "./schemas";
 import { myTheme } from "./sanityTheme";
 import StudioNavbar from "./components/StudioNavbar";
+import { myStructure } from "./sanity.deskStructure";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
@@ -18,7 +19,9 @@ export default defineConfig({
     dataset,
     
     plugins: [
-        deskTool(),
+        deskTool({
+            structure: myStructure,
+        }),
         visionTool(),
     ],
 

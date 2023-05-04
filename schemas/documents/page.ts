@@ -33,6 +33,11 @@ export const page = defineType({
             title: 'Body',
             type: 'blockContent',
         }),
+        defineField({
+            name: 'metadata',
+            title: 'Metadata',
+            type: 'seo'
+        })
     ],
     preview: {
         select: {

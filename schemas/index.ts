@@ -4,8 +4,10 @@ import { ingredient } from "./documents/ingredientList";
 import { mediaLibrary } from "./documents/mediaLibrary";
 import { page } from "./documents/page";
 import { recipes } from "./documents/recipes";
+import { settings } from "./documents/settings";
 import { blockContent } from "./objects/blockContent";
 import { mainImage } from "./objects/mainImage";
+import { seo } from "./objects/seo";
 
 export const schemaTypes = [
     // documents
@@ -15,7 +17,9 @@ export const schemaTypes = [
     recipes,
     chef,
     category,
+    settings,
     // objects
     blockContent,
     mainImage,
+    seo,
 ]

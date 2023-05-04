@@ -1,9 +1,11 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
+import {MenuIcon} from '@sanity/icons'
 
 export const ingredient = defineType({
     name: 'ingredient',
     title: 'Ingredients',
     type: 'document',
+    icon: MenuIcon,
     fields: [
         defineField({
             name: 'name',
