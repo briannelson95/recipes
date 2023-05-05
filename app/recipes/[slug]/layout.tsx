@@ -1,7 +1,7 @@
 export default function RecipeLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode
+  children: React.ReactNode
 }) {
-  return <section className={`max-w-3xl mx-auto`}>{children}</section>
+  return <section className={`mx-2 max-w-3xl md:mx-auto`}>{children}</section>
 }
