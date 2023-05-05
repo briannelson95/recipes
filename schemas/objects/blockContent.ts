@@ -1,3 +1,4 @@
+import { MediaPreview } from '@/components/SanityPreviewComponents';
 import { defineArrayMember, defineType } from 'sanity';
 
 export const blockContent = defineType({
@@ -56,6 +57,9 @@ export const blockContent = defineType({
             type: 'reference',
             to: {
                 type: 'mediaLibrary'
+            },
+            components: {
+                preview: MediaPreview
             }
         }),
     ],

@@ -1,5 +1,6 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import {MenuIcon} from '@sanity/icons'
+import { MediaPreview } from '@/components/SanityPreviewComponents';
 
 export const ingredient = defineType({
     name: 'ingredient',
@@ -16,7 +17,10 @@ export const ingredient = defineType({
             name: 'mainImage',
             title: 'Main Image',
             type: 'reference',
-            to: { type: 'mediaLibrary'}
+            to: { type: 'mediaLibrary'},
+            components: {
+                preview: MediaPreview
+            }
         }),
         defineField({
             name: 'notes',

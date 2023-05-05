@@ -1,3 +1,4 @@
+import { MediaPreview } from '@/components/SanityPreviewComponents';
 import { defineField, defineType } from 'sanity';
 
 export const page = defineType({
@@ -23,9 +24,9 @@ export const page = defineType({
             type: 'reference',
             to: {
                 type: 'mediaLibrary',
-                // components: {
-                //     preview: MediaPreview
-                // }
+                components: {
+                    preview: MediaPreview
+                }
             },
         }),
         defineField({

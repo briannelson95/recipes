@@ -140,6 +140,11 @@ export const recipes = defineType({
                     to: {type: 'category'}
                 }
             ]
-        })
+        }),
+        defineField({
+            name: 'images',
+            title: 'Images',
+            type: 'photoGallery',
+        }),
     ],
 })

@@ -7,6 +7,7 @@ import { recipes } from "./documents/recipes";
 import { settings } from "./documents/settings";
 import { blockContent } from "./objects/blockContent";
 import { mainImage } from "./objects/mainImage";
+import { photoGallery } from "./objects/photoGallery";
 import { seo } from "./objects/seo";
 
 export const schemaTypes = [
@@ -22,4 +23,5 @@ export const schemaTypes = [
     blockContent,
     mainImage,
     seo,
+    photoGallery,
 ]
