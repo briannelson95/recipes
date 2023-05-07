@@ -16,7 +16,7 @@ export default async function Recipes() {
                         key={index}
                         title={item.title}
                         slug={item.slug.current}
-                        image={urlFor(item.featuredImage.media.image).url()}
+                        image={item.featuredImage ? urlFor(item.featuredImage.media.image).url() : null}
                         categories={item.categories}
                         time={`${item.time.number} ${item.time.unit}`}
                         servings={`${item.serving.number} ${item.serving.unit}`}
