@@ -15,6 +15,7 @@ export default function Recipe({data}: any) {
             </div>
             <div className='p-2 pt-28 text-center bg-blue-100 text-blue-800'>
                 <h2 className='text-3xl font-bold'>{data.title}</h2>
+                <p>Servings: {data.serving.number} {data.serving.unit}</p>
             </div>
             <div className='mt-2'>
                 <h3 className='text-2xl font-semibold'>Ingredients</h3>
