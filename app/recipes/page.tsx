@@ -8,7 +8,7 @@ export default async function Recipes() {
     const allRecipes = await client.fetch(recipes)
 
     return (
-        <div>
+        <div className='mx-2 max-w-6xl md:mx-auto'>
             Recipes
             <div className='grid grid-cols-1 md:grid-cols-3'>
                 {allRecipes.map((item: any, index: any) => (
