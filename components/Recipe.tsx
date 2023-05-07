@@ -13,14 +13,7 @@ export default function Recipe({data}: any) {
             <div className='absolute -mt-[100px] -ml-[100px] left-[50%]'>
                 <div className='bg-white border-white border-[10px] rounded-xl w-[200px] h-[200px]'>
                     {data.featuredImage ? 
-                        <Image 
-                            src={urlFor(data.featuredImage.media.image).url()}
-                            alt={data.featuredImage.media.alt}
-                            height={300}
-                            width={300}
-                            className='w-full h-full rounded-lg'
-                            priority
-                        />
+                        <div style={{backgroundImage: `url(${urlFor(data.featuredImage.media.image).url()})`}} className='w-full h-full rounded-lg bg-cover bg-no-repeat' />
                         : <div className='bg-sky-400 rounded-lg w-full h-full' />
                     }
                 </div>

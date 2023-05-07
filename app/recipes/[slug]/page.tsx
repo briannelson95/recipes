@@ -3,6 +3,7 @@ import { singleRecipe } from '@/lib/queries'
 import { client } from '@/lib/sanity.client'
 import { Metadata } from 'next'
 import { groq } from 'next-sanity'
+import Link from 'next/link'
 import React from 'react'
 
 interface Props {
@@ -38,9 +39,12 @@ export default async function SingleRecipe({params: {slug}}: Props) {
 
     return (
         <main>
-            <div className='flex justify-center'>
-                <Recipe data={recipe} />
+            <div>
+                <Link href={'/recipes'}>← Back to recipes</Link>
             </div>
+            <section className='flex justify-center'>
+                <Recipe data={recipe} />
+            </section>
         </main>
     )
 }
