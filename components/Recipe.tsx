@@ -1,16 +1,28 @@
 import React from 'react';
 import { PortableText } from "@portabletext/react";
 import { RichTextComponent } from './sanity.RichTextComponent';
+import Image from 'next/image';
+import urlFor from '@/lib/urlFor';
 
 export default function Recipe({data}: any) {
     const ingredients: any[] = data.ingredientList 
-    // console.log(data.instructions)
+    // console.log(data)
 
     return (
         <div className='relative w-full mt-[120px] mb-10 border-[20px] border-sky-50 bg-sky-50 text-blue-950'>
             <div className='absolute -mt-[100px] -ml-[100px] left-[50%]'>
                 <div className='bg-white border-white border-[10px] rounded-xl w-[200px] h-[200px]'>
-                    <div className='bg-sky-400 rounded-lg w-full h-full' />
+                    {data.featuredImage ? 
+                        <Image 
+                            src={urlFor(data.featuredImage.media.image).url()}
+                            alt={data.featuredImage.media.alt}
+                            height={300}
+                            width={300}
+                            className='w-full h-full rounded-lg'
+                            priority
+                        />
+                        : <div className='bg-sky-400 rounded-lg w-full h-full' />
+                    }
                 </div>
             </div>
             <div className='p-2 pt-28 text-center bg-blue-100 text-blue-800'>

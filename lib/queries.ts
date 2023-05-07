@@ -7,5 +7,8 @@ export const singleRecipe = groq`*[_type == "recipes" && slug.current == $slug][
         ingredient-> {
             name
         }
+    },
+    featuredImage-> {
+        media
     }
 }`

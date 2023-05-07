@@ -1,3 +1,4 @@
+import { MediaPreview } from '@/components/SanityPreviewComponents';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const photoGallery = defineType({
@@ -10,7 +11,12 @@ export const photoGallery = defineType({
     of: [
         defineArrayMember({
             type: 'reference',
-            to: {type: 'mainImage'}
+            to: {
+                type: 'mediaLibrary',
+                components: {
+                    preview: MediaPreview
+                }
+            },
         })
     ]
 })

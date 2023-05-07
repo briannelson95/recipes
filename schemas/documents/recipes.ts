@@ -1,3 +1,4 @@
+import { MediaPreview } from '@/components/SanityPreviewComponents';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const recipes = defineType({
@@ -29,9 +30,9 @@ export const recipes = defineType({
             type: 'reference',
             to: {
                 type: 'mediaLibrary',
-                // components: {
-                //     preview: MediaPreview
-                // }
+                components: {
+                    preview: MediaPreview
+                }
             },
         }),
         defineField({
