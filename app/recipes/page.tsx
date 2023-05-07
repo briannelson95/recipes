@@ -10,7 +10,7 @@ export default async function Recipes() {
     return (
         <div className='mx-2 max-w-6xl md:mx-auto'>
             Recipes
-            <div className='grid grid-cols-1 md:grid-cols-3'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                 {allRecipes.map((item: any, index: any) => (
                     <RecipeCard 
                         key={index}
