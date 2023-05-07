@@ -5,6 +5,15 @@ export const recipes = defineType({
     name: 'recipes',
     title: 'Recipes',
     type: 'document',
+    fieldsets: [
+        {
+            name: 'serving',
+            title: 'Serving/Time',
+            options: {
+                columns: 2
+            }
+        }
+    ],
     fields: [
         defineField({
             name: 'title',
@@ -38,6 +47,7 @@ export const recipes = defineType({
         defineField({
             name: 'serving',
             type: 'object',
+            fieldset: 'serving',
             fields: [
                 defineField({
                     name: 'number',
@@ -53,6 +63,37 @@ export const recipes = defineType({
                 select: {
                     number: 'serving.number',
                     unit: 'serving.unit',
+                },
+                prepare({
+                    number,
+                    unit,
+                }) {
+                    return {
+                        title: `${number} ${unit}`,
+                    }
+                }
+            }
+        }),
+        defineField({
+            name: 'time',
+            title: 'Time to Make',
+            type: 'object',
+            fieldset: 'serving',
+            fields: [
+                defineField({
+                    name: 'number',
+                    title: 'Number',
+                    type: 'number',
+                }),
+                defineField({
+                    name: 'unit',
+                    type: 'string',
+                })
+            ],
+            preview: {
+                select: {
+                    number: 'time.number',
+                    unit: 'time.unit',
                 },
                 prepare({
                     number,

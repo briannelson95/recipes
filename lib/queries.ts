@@ -10,5 +10,8 @@ export const singleRecipe = groq`*[_type == "recipes" && slug.current == $slug][
     },
     featuredImage-> {
         media
+    },
+    chef-> {
+        name
     }
 }`
