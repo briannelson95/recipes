@@ -15,3 +15,16 @@ export const singleRecipe = groq`*[_type == "recipes" && slug.current == $slug][
         name
     }
 }`
+
+export const recipes = groq`
+    *[_type == "recipes"]{
+        title,
+        slug,
+        featuredImage->{
+            media
+        },
+        categories[]->{
+            title
+        }
+    }
+`
