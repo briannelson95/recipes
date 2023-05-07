@@ -11,6 +11,8 @@ interface Props {
     }
 }
 
+export const revalidate = 500;
+
 export async function generateStaticParams(){
     const recipes = groq`*[_type == "recipes"]{ slug }`;
 

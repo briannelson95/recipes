@@ -4,6 +4,8 @@ import { client } from '@/lib/sanity.client'
 import urlFor from '@/lib/urlFor'
 import React from 'react'
 
+export const revalidate = 500;
+
 export default async function Recipes() {
     const allRecipes = await client.fetch(recipes)
 
