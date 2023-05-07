@@ -25,6 +25,8 @@ export const recipes = groq`
         },
         categories[]->{
             title
-        }
+        },
+        serving,
+        time
     }
 `
