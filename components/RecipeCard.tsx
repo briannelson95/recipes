@@ -29,7 +29,7 @@ export default function RecipeCard({title, slug, image, categories, time, servin
                     </div>
                     <Link href={`recipes/${slug}`} className='border absolute text-center bottom-0 w-full p-1 hover:bg-blue-950 hover:text-white transition-colors duration-200'>See Recipe</Link>
                 </div>
-                <div style={image ? {backgroundImage: `url(${image})`} : {background: '#fff'}} className='h-full bg-cover bg-center bg-no-repeat' />
+                <div style={image ? {backgroundImage: `url(${image})`} : {background: 'transparent'}} className='h-full bg-cover bg-center bg-no-repeat bg-sky-200' />
             </div>
         </Link>
     )
