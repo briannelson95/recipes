@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
+import {ImageIcon} from '@sanity/icons'
 
 interface Props {
     title: string;
@@ -29,7 +30,9 @@ export default function RecipeCard({title, slug, image, categories, time, servin
                     </div>
                     <Link href={`recipes/${slug}`} className='border absolute text-center bottom-0 w-full p-1 hover:bg-blue-950 hover:text-white transition-colors duration-200'>See Recipe</Link>
                 </div>
-                <div style={image ? {backgroundImage: `url(${image})`} : {background: 'transparent'}} className='h-full bg-cover bg-center bg-no-repeat bg-sky-200' />
+                <div style={image ? {backgroundImage: `url(${image})`} : {background: ''}} className='h-full bg-cover bg-center bg-no-repeat bg-sky-200 flex justify-center items-center'>
+                    {image ? '' : <ImageIcon height={50} width={50} className='text-sky-500/60' />}
+                </div>
             </div>
         </Link>
     )
