@@ -137,7 +137,7 @@ export const recipes = defineType({
                             title: "Unit",
                             type: "string",
                             options: {
-                                list: ["grams", "cup", "Tbsp", "tsp", "lbs"],
+                                list: ["grams", "mL", "cup", "Tbsp", "tsp", "lbs"],
                             },
                         })
                     ],
