@@ -6,6 +6,7 @@ import { schemaTypes } from "./schemas";
 import { myTheme } from "./sanityTheme";
 import StudioNavbar from "./components/StudioNavbar";
 import { myStructure } from "./sanity.deskStructure";
+import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
@@ -23,6 +24,7 @@ export default defineConfig({
             structure: myStructure,
         }),
         visionTool(),
+        unsplashImageAsset(),
     ],
 
     schema: {
