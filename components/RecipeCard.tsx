@@ -16,22 +16,18 @@ interface Props {
 
 export default function RecipeCard({title, slug, image, categories, time, servings}: Props) {
     return (
-        <Link className='w-full h-64' href={`/recipes/${slug}`}>
-            <div className='w-full h-full shadow-md grid grid-cols-2 gap-2 p-2'>
-                <div className='w-full h-full relative flex flex-col'>
-                    <h2 className='text-xl font-bold'>{title}</h2>
-                    <div className='text-sm'>
-                        <h3 className='font-bold p-0 m-0'>Total Time</h3>
-                        <p>{time}</p>
-                    </div>
-                    <div className='text-sm align-bottom'>
-                        <h3 className='font-bold p-0 m-0'>Servings</h3>
-                        <p>{servings}</p>
-                    </div>
-                    <Link href={`recipes/${slug}`} className='border absolute text-center bottom-0 w-full p-1 hover:bg-blue-950 hover:text-white transition-colors duration-200'>See Recipe</Link>
-                </div>
-                <div style={image ? {backgroundImage: `url(${image})`} : {background: ''}} className='h-full bg-cover bg-center bg-no-repeat bg-sky-200 flex justify-center items-center'>
+        <Link className='w-full h-auto' href={`/recipes/${slug}`}>
+            <div className='w-full shadow-md'>
+                <div style={image ? {backgroundImage: `url(${image})`} : {background: ''}} className='h-48 bg-cover bg-center bg-no-repeat bg-sky-200 flex justify-center items-center'>
                     {image ? '' : <ImageIcon height={50} width={50} className='text-sky-500/60' />}
+                </div>
+                <div className='p-2 h-full'>
+                    <h2 className='text-xl font-bold'>{title}</h2>
+                    <div className='flex w-full space-x-4 text-sm font-light py-2'>
+                        <p>Servings: {servings}</p>
+                        <p>Total Time: {time}</p>
+                    </div>
+                    <Link href={`recipes/${slug}`} className='border text-center w-full p-1 hover:bg-blue-950 hover:text-white transition-colors duration-200'>See Recipe</Link>
                 </div>
             </div>
         </Link>
