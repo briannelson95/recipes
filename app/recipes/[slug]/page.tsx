@@ -1,6 +1,7 @@
 import Recipe from '@/components/Recipe'
 import { singleRecipe } from '@/lib/queries'
 import { client } from '@/lib/sanity.client'
+import urlFor from '@/lib/urlFor'
 import { Metadata } from 'next'
 import { groq } from 'next-sanity'
 import Link from 'next/link'
@@ -30,7 +31,16 @@ export async function generateMetadata({params: {slug}}: Props) {
 
     return {
         title: `${recipe.title} Recipe from No-Frills Recipes`,
-        description: `Best ${recipe.title} recipe from No-Frills Recipes`
+        description: `Best ${recipe.title} recipe from No-Frills Recipes`,
+        openGraph: {
+            images: [
+                {
+                    url: `${urlFor(recipe.featuredImage.media.image).url()}`,
+                    width: 800,
+                    height: 600,
+                  },
+            ]
+        }
     };
 }
 
