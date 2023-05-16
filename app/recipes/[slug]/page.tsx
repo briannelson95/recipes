@@ -35,7 +35,7 @@ export async function generateMetadata({params: {slug}}: Props) {
         openGraph: {
             images: [
                 {
-                    url: `${urlFor(recipe.featuredImage.media.image).url()}`,
+                    url: recipe.featuredImage ? `${urlFor(recipe.featuredImage.media.image).url()}` : null,
                     width: 800,
                     height: 600,
                   },
