@@ -4,7 +4,7 @@ import { client } from '@/lib/sanity.client'
 import { Metadata } from 'next'
 import { groq } from 'next-sanity'
 import Link from 'next/link'
-import React from 'react'
+import React from 'react';
 
 interface Props {
     params: {

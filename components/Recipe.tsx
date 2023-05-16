@@ -3,6 +3,7 @@ import { PortableText } from "@portabletext/react";
 import { RichTextComponent } from './sanity.RichTextComponent';
 import Image from 'next/image';
 import urlFor from '@/lib/urlFor';
+import WakeLock from './WakeLock';
 
 export default function Recipe({data}: any) {
     const ingredients: any[] = data.ingredientList 
@@ -25,6 +26,7 @@ export default function Recipe({data}: any) {
                 <div className='text-left text-blue-400'>
                     <p>Made by: {data.chef.name}</p>
                 </div>
+                <WakeLock />
             </div>
             <div className='mt-2'>
                 <h3 className='text-2xl font-semibold'>Ingredients</h3>
