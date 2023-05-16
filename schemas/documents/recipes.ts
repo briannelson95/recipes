@@ -34,6 +34,11 @@ export const recipes = defineType({
             to: {type: 'chef'}
         }),
         defineField({
+            name: 'favorite',
+            type: 'boolean',
+            initialValue: false,
+        }),
+        defineField({
             name: 'featuredImage',
             title: 'Featured Image',
             type: 'reference',

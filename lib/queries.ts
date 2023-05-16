@@ -29,4 +29,18 @@ export const recipes = groq`
         serving,
         time
     }
-`
+`;
+
+export const homepage = groq`{
+    "recipes": *[_type == "recipes" && (!references(*[_type == "category" && title == "Toppings"]._id))] | order(_createdAt desc)[0...3]{
+        title,
+        slug,
+        featuredImage->{
+            media {
+                image,
+                alt
+            }
+        },
+        ...
+    }
+}`
