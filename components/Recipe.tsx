@@ -23,10 +23,10 @@ export default function Recipe({data}: any) {
                 <h2 className='text-3xl font-bold'>{data.title}</h2>
                 <p>Servings: {data.serving.number} {data.serving.unit}</p>
                 <p>Total Time: {data.time.number} {data.time.unit}</p>
-                <div className='text-left text-blue-400'>
+                <div className='text-left text-blue-400 flex justify-between'>
                     <p>Made by: {data.chef.name}</p>
+                    <WakeLock />
                 </div>
-                <WakeLock />
             </div>
             <div className='mt-2'>
                 <h3 className='text-2xl font-semibold'>Ingredients</h3>
